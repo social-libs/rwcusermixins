@@ -3,6 +3,7 @@ function createLib (execlib, methoddescriptors, vararglib) {
 
   return execlib.lib.extend({
     mixins: {
+      service: require('./service')(execlib, methoddescriptors, vararglib),
       user: require('./user')(execlib, methoddescriptors, vararglib)
     }
   }, require('./webindex.js')(execlib, methoddescriptors, vararglib));
